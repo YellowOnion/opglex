@@ -1,7 +1,7 @@
 print 'importing numpy...',
 import numpy as np
 print 'done'
-print 'importing Pyglet...',
+print 'importing pyglet, gletools, etc...',
 import pyglet
 from gletools.gl import *
 from gletools import (
