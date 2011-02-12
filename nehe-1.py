@@ -12,7 +12,7 @@ pyglet.options['debug_gl'] = True
 print 'done'
 
 print 'importing pyglet reactor...',
-import pygletreactor
+import opglex.pygletreactor as pygletreactor
 print 'done'
 
 print 'installing...',
@@ -23,9 +23,13 @@ print 'importing twisted...',
 from twisted.internet import reactor
 print 'done'
 
-import time, math
+import time
+import math
+import os
+import sys
 from ctypes import sizeof, POINTER
-        
+
+
 def size_of(array):
     return array.dtype.itemsize * len(array)
 
@@ -137,8 +141,8 @@ class World(pyglet.window.Window):
         self.far = 3.0
         self.fov = 120.0
         self.program = ShaderProgram(
-                VertexShader.open('simple.vert'),
-                FragmentShader.open('simple.frag'),
+                VertexShader.open(os.path.join(os.path.dirname(__file__) , 'opglex/shaders/simple.vert')),
+                FragmentShader.open(os.path.join(os.path.dirname(__file__), 'opglex/shaders/simple.frag')),
                 offset = [0.0, 0.0, 0.0],
                 perspectiveMatrix = Matrix.perspective(self.width, self.height, self.fov, self.near, self.far)
         )
