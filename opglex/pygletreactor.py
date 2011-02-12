@@ -51,7 +51,7 @@ from twisted.python import log, runtime
 from twisted.internet import _threadedselect
 
 try:
-    # Pyglet 1.1.2
+    # Pyglet 1.1.2  seems to work with 1.1.4
     from pyglet.app.base import EventLoop
     pyglet_event_loop = pyglet.app.base.EventLoop
 except ImportError:
