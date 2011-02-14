@@ -221,7 +221,7 @@ class World(pyglet.window.Window):
             glDrawElements(GL_TRIANGLES, size_of(index_data), GL_UNSIGNED_SHORT, 0)
 
             glBindVertexArray(self.vao2)
-            glUniform3f(self.program.uniform_location('offset'), 0.0, 0.0, 0.0 )
+            glUniform3f(self.program.uniform_location('offset'), 0.0, 0.0, 1.0 )
             glDrawElements(GL_TRIANGLES, size_of(index_data), GL_UNSIGNED_SHORT, 0)
 
             glBindVertexArray(0)
